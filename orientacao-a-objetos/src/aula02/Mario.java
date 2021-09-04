@@ -14,16 +14,16 @@ public class Mario {
 
     //Metodo Construtor
     public Mario (){
-        setNome("Mario Bros");
-        setIdade(40);
-        setEstamina(100);
-        setAltura(1.50);
+        this.setNome("Mario Bros");
+        this.setIdade(40);
+        this.setEstamina(100);
+        this.setAltura(1.50);
     }
     public Mario(String nome, int idade, double altura){
-        setNome(nome);
-        setIdade(idade);
-        setEstamina(100);
-        setAltura(altura);
+        this.setNome(nome);
+        this.setIdade(idade);
+        this.setEstamina(100);
+        this.setAltura(altura);
     }
     public void mostrarPerfil(){
         System.out.println("Nome = " + getNome());
