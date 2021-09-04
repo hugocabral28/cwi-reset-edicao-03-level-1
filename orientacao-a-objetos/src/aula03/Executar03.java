@@ -1,16 +1,18 @@
-package aula02;
+package aula03;
 
-public class Executar {
+import aula02.Mario;
+
+public class Executar03 {
     public static void main(String[] args){
         Mario personagem = new Mario();
-        personagem.nome = "Mario";
+        //personagem.nome = "Mario"; //<-- Não é possível atribuir porque está privado
         personagem.corPele = "clara";
         personagem.tipoAltura = "baixo";
         personagem.corOlhos = "azuis";
         personagem.tamanhoNariz = "grande";
-        personagem.bigode = true;
-        personagem.tipoBigode = "grosso";
-        personagem.corBigode = "castanho-escuro";
+        //personagem.bigode = true; //<-- Não é possível atribuir porque está como protegido e a classe está em pacote diferente
+        //personagem.tipoBigode = "grosso"; //<-- Não é possível atribuir porque está como protegido e a classe está em pacote diferente
+        //personagem.corBigode = "castanho-escuro"; //<-- Não é possível atribuir porque está como protegido e a classe está em pacote diferente
 
         System.out.println("______________________");
         System.out.println("Características");

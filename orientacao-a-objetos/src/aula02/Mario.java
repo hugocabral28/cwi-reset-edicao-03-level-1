@@ -1,17 +1,17 @@
 package aula02;
 
 public class Mario {
-    String nome;
-    String corPele;
-    String tipoAltura;
-    String corOlhos;
-    String tamanhoNariz;
-    boolean bigode;
-    String tipoBigode;
-    String corBigode;
+    private String nome;
+    public String corPele;
+    public String tipoAltura;
+    public String corOlhos;
+    public String tamanhoNariz;
+    protected boolean bigode;
+    protected String tipoBigode;
+    protected String corBigode;
 
 
-    void mostrarPerfil(){
+    public void mostrarPerfil(){
         System.out.println("Nome = " + this.nome);
         System.out.println("Cor da pele = " + this.corPele);
         System.out.println("Tipo de altura = " + this.tipoAltura);
@@ -25,7 +25,7 @@ public class Mario {
             System.out.println("Não tem bigode");
         }
     }
-    void mostrarPoder(){
+    public void mostrarPoder(){
         System.out.println("Super Reflexo e Super força");
     }
 
