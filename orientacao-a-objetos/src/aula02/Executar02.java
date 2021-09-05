@@ -1,7 +1,9 @@
 package aula02;
 
 public class Executar02 {
+
     public static void main(String[] args){
+        /*
         Mario personagem = new Mario();
         personagem.nome = "Mario";
         personagem.corPele = "clara";
@@ -20,6 +22,8 @@ public class Executar02 {
         System.out.println("Poderes");
         System.out.println("______________________");
         personagem.mostrarPoder();
+
+         */
 
     }
 }
