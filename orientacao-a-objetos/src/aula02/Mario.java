@@ -25,6 +25,24 @@ public class Mario {
         this.setEstamina(100);
         this.setAltura(altura);
     }
+    //metodos personalizados
+    public void perderEstamina(){
+        int perde = this.getEstamina()-10;
+        if (perde < 0){
+            perde = 0;
+        }
+        this.setEstamina(perde);
+    }
+    public void ganhaEstamina(){
+        int ganha = this.getEstamina()+5;
+        if(ganha > 100){
+            ganha = 100;
+        }
+        this.setEstamina(ganha);
+    }
+    public void crescer(){
+        this.setAltura(this.getAltura()*2);
+    }
     public void mostrarPerfil(){
         System.out.println("Nome = " + getNome());
         System.out.println("Cor da pele = " + getIdade());
