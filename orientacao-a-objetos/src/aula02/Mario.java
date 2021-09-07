@@ -5,12 +5,8 @@ public class Mario {
     private int idade;
     private double altura;
     private int estamina;
-    private String corPele;
-    private String corOlhos;
-    private String tamanhoNariz;
-    private boolean bigode;
-    private String tipoBigode;
-    private String corBigode;
+    private int quantidadeMoedas = 0;
+    private int quantidadeVidas = 1;
 
     //Metodo Construtor
     public Mario (){
@@ -43,21 +39,37 @@ public class Mario {
     public void crescer(){
         this.setAltura(this.getAltura()*2);
     }
+
+    public void revigorar(){
+        this.setEstamina(100);
+    }
+
+    public void morrer(){
+        this.setEstamina(0);
+        this.setQuantidadeVidas(this.getQuantidadeVidas()-1);
+        if (this.getQuantidadeVidas() < 0){
+            this.setQuantidadeVidas(0);
+        }
+        if(this.getQuantidadeVidas() >= 0){
+            revigorar();
+        }
+    }
+
+    public void coletarMoedas(){
+        this.setQuantidadeMoedas(this.getQuantidadeMoedas()+1);
+        if(this.getQuantidadeMoedas() % 10 == 0){
+            this.setQuantidadeVidas(this.getQuantidadeVidas()+1);
+        }
+    }
+
     public void mostrarPerfil(){
         System.out.println("Nome = " + getNome());
-        System.out.println("Cor da pele = " + getIdade());
-        System.out.println("Estamina = " + getEstamina());
+        System.out.println("Idade = " + getIdade());
         System.out.println("Altura = " + getAltura());
-        System.out.println("Cor da pele = " + getCorPele());
-        System.out.println("Cor dos olhos = " + getCorOlhos());
-        System.out.println("Tamanho do nariz = " + getTamanhoNariz());
-        //verifica se tem bigode
-        if(isBigode()){
-            System.out.println("Bigode do tipo = " + getTipoBigode());
-            System.out.println("Cor do bigode = " + getCorBigode());
-        }else{
-            System.out.println("Não tem bigode");
-        }
+        System.out.println("Estamina = " + getEstamina());
+        System.out.println("Quantidade de Moedas = " + getQuantidadeMoedas());
+        System.out.println("Quantidade de Vidas = " + getQuantidadeVidas());
+
     }
     public void mostrarPoder(){
         System.out.println("Super Reflexo e Super força");
@@ -96,51 +108,19 @@ public class Mario {
         this.estamina = estamina;
     }
 
-    public String getCorPele() {
-        return corPele;
+    public int getQuantidadeMoedas() {
+        return quantidadeMoedas;
     }
 
-    public void setCorPele(String corPele) {
-        this.corPele = corPele;
+    public void setQuantidadeMoedas(int quantidadeMoedas) {
+        this.quantidadeMoedas = quantidadeMoedas;
     }
 
-    public String getCorOlhos() {
-        return corOlhos;
+    public int getQuantidadeVidas() {
+        return quantidadeVidas;
     }
 
-    public void setCorOlhos(String corOlhos) {
-        this.corOlhos = corOlhos;
-    }
-
-    public String getTamanhoNariz() {
-        return tamanhoNariz;
-    }
-
-    public void setTamanhoNariz(String tamanhoNariz) {
-        this.tamanhoNariz = tamanhoNariz;
-    }
-
-    public boolean isBigode() {
-        return bigode;
-    }
-
-    public void setBigode(boolean bigode) {
-        this.bigode = bigode;
-    }
-
-    public String getTipoBigode() {
-        return tipoBigode;
-    }
-
-    public void setTipoBigode(String tipoBigode) {
-        this.tipoBigode = tipoBigode;
-    }
-
-    public String getCorBigode() {
-        return corBigode;
-    }
-
-    public void setCorBigode(String corBigode) {
-        this.corBigode = corBigode;
+    public void setQuantidadeVidas(int quantidadeVidas) {
+        this.quantidadeVidas = quantidadeVidas;
     }
 }
