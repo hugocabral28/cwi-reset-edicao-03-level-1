@@ -1,25 +1,22 @@
 package aula02;
 
-public class Mario {
+public class Personagem {
     private String nome;
     private int idade;
     private double altura;
     private int estamina;
-    private int quantidadeMoedas = 0;
-    private int quantidadeVidas = 1;
+    private int quantidadeMoedas;
+    private int quantidadeVidas;
 
     //Metodo Construtor
-    public Mario (){
-        this.setNome("Mario Bros");
-        this.setIdade(40);
-        this.setEstamina(100);
-        this.setAltura(1.50);
-    }
-    public Mario(String nome, int idade, double altura){
+    public Personagem(String nome, int idade, double altura){
         this.setNome(nome);
         this.setIdade(idade);
-        this.setEstamina(100);
         this.setAltura(altura);
+        this.setEstamina(100);
+        this.setQuantidadeMoedas(0);
+        this.setQuantidadeVidas(1);
+
     }
     //metodos personalizados
     public void perderEstamina(){
@@ -59,6 +56,16 @@ public class Mario {
         this.setQuantidadeMoedas(this.getQuantidadeMoedas()+1);
         if(this.getQuantidadeMoedas() % 10 == 0){
             this.setQuantidadeVidas(this.getQuantidadeVidas()+1);
+        }
+    }
+
+    public void saltar(){
+        if(this.getNome().equals("Mario")){
+            System.out.println(this.getNome() +" ele pula uma altura de " + this.getAltura()*0.5 + " metros");
+        }else if(this.getNome().equals("Luigi")){
+            System.out.println(this.getNome() +" ele pula uma altura de " + this.getAltura()*2 + " metros");
+        }else {
+            System.out.println("Não é Mario ou Luigi");
         }
     }
 
