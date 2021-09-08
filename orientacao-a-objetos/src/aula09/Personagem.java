@@ -33,9 +33,7 @@ public abstract class Personagem {
         }
         this.setEstamina(ganha);
     }
-    public void crescer(){
-        this.setAltura(this.getAltura()*2);
-    }
+    public abstract void crescer();
 
     public void revigorar(){
         this.setEstamina(100);
@@ -60,13 +58,18 @@ public abstract class Personagem {
     }
 
     public void saltar(){
-        if(this.getNome().equals("Mario")){
+        System.out.println(this.getNome() + " está pulando uma altura de " + this.getAltura() * 0.50);
+        /*if(this.getNome().equals("Mario")){
             System.out.println(this.getNome() +" ele pula uma altura de " + this.getAltura()*0.5 + " metros");
         }else if(this.getNome().equals("Luigi")){
             System.out.println(this.getNome() +" ele pula uma altura de " + this.getAltura()*2 + " metros");
         }else {
             System.out.println("Não é Mario ou Luigi");
-        }
+        }*/
+    }
+    public void saltar(double alturaObstaculo){
+        System.out.println("Altura do obstaculo é " + alturaObstaculo);
+        System.out.println(this.getNome() + " está pulando uma altura maior que a obstaculo " + alturaObstaculo * 1.50);
     }
 
     public void mostrarPerfil(){

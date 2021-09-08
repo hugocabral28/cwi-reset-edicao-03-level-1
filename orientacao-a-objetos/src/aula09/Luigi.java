@@ -10,4 +10,10 @@ public class Luigi extends Personagem {
     public void voar(){
         System.out.println("Luigi está voando");
     }
+
+    @Override
+    public void crescer(){
+        double novaAltura = this.getAltura()*0.75;
+        this.setAltura(this.getAltura()+novaAltura);
+    }
 }

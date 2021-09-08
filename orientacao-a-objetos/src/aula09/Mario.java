@@ -20,6 +20,12 @@ public class Mario extends Personagem {
         }
     }
 
+    @Override
+    public void crescer(){
+        double novaAltura = this.getAltura()*0.5;
+        this.setAltura(this.getAltura()+novaAltura);
+    }
+
     public Yoshi getYoshi() {
         return yoshi;
     }

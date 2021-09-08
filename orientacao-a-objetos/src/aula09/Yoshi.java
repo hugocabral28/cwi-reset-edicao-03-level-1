@@ -23,6 +23,12 @@ public class Yoshi extends Personagem {
         System.out.println("Quantidade de Fruntas comida: " + this.quantidadeFrutas);
         System.out.println("Velocidade: " + this.getVelocidade());
     }
+
+    @Override
+    public void crescer(){
+        double novaAltura = this.getAltura()*0.10;
+        this.setAltura(this.getAltura()+novaAltura);
+    }
     //Método especiais
     public int getVelocidade() {
         return velocidade;
